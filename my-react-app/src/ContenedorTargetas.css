@@ -80,3 +80,21 @@
 		flex: 0 0 80%;
 	}
 }
+
+/* Efecto de salto al pasar el cursor */
+.tarjeta{
+	transition: transform 240ms cubic-bezier(.2,.8,.2,1),
+				box-shadow 240ms cubic-bezier(.2,.8,.2,1);
+	will-change: transform, box-shadow;
+}
+
+.tarjeta:hover,
+.tarjeta:focus-within{
+	transform: translateY(-10px);
+	box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+.tarjeta:active{
+	transform: translateY(-4px);
+	box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+}
