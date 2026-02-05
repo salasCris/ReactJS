@@ -1,4 +1,4 @@
-import miLogo from './assets/logoo.jpg';
+import miLogo from './assets/monsterlogo.jpg';
 import facebook from './assets/facebook.png';
 import instagram from './assets/instagram.png';
 import telegrama from './assets/telegrama.png';

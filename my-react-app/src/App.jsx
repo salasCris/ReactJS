@@ -1,17 +1,13 @@
 import ContenedorTargetas from "./ContenedorTargetas";
 import Encabezado from "./Encabezado";
+import Footer from "./Footer";
 
 function App() {
   return (
     <div>
       <Encabezado/>
       <ContenedorTargetas/>
-      <h1>5A EVND</h1>
-      <h2>Profesor</h2>
-      <h3>M.T.I Ricardo Luna Santos</h3>
-      <h4>Alumnos</h4>
-      <h4>Cristian</h4>
-      <h4>Salas</h4>
+      <Footer/>
 
       <UserComponent/>
       <ProfileComponent/>
