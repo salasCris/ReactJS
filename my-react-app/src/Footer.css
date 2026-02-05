@@ -1,15 +1,17 @@
 .Footer {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 40px 20px;
-    margin-top: 40px;
+    background: linear-gradient(180deg, #050505, #0b0b0b);
+    color: #eaeaea;
+    padding: 50px 30px;
+    margin-top: 60px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
     width: 100%;
     box-sizing: border-box;
+    border-top: 2px solid rgba(0,255,102,0.4);
 }
+
 
 .footerLeft {
     flex: 1;
@@ -18,28 +20,33 @@
 
 .footerLeft h3 {
     margin: 0 0 15px 0;
-    font-size: 1.8rem;
-    color: #76ff03;
+    font-size: 1.9rem;
+    color: #00ff66;
+    text-shadow: 0 0 10px rgba(0,255,102,0.6);
 }
 
+
 .footerLeft p {
-    margin: 8px 0;
+    margin: 10px 0;
     font-size: 0.95rem;
-    line-height: 1.6;
-    color: #ccc;
+    line-height: 1.7;
+    color: #b5b5b5;
 }
+
 
 .footerRight {
     flex: 1;
     display: flex;
-    gap: 40px;
+    gap: 50px;
     justify-content: flex-end;
 }
+
 
 .footerSection h4 {
     margin: 0 0 15px 0;
     font-size: 1.1rem;
-    color: #76ff03;
+    color: #00ff66;
+    text-shadow: 0 0 6px rgba(0,255,102,0.5);
 }
 
 .footerSection ul {
@@ -53,14 +60,31 @@
 }
 
 .footerSection a {
-    color: #ccc;
+    color: #b5b5b5;
     text-decoration: none;
-    transition: color 240ms ease;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+.footerSection a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #00ff66;
+    transition: width 0.25s ease;
 }
 
 .footerSection a:hover {
-    color: #76ff03;
+    color: #00ff66;
 }
+
+.footerSection a:hover::after {
+    width: 100%;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {

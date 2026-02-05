@@ -23,6 +23,7 @@ function Footer() {
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Instagram</a></li>
                         <li><a href="#">TikTok</a></li>
+                         <li><a href="#">Telegram</a></li>
                     </ul>
                 </div>
             </div>

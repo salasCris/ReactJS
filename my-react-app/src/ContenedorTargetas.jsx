@@ -11,10 +11,10 @@ function ContenedorTargetas() {
               <div className="tarjetasWrapper">
                   <div className="contenedorHorizontal">
                       <div className="tarjetas">
-                          <Tarjeta imagen={monsterblack} />
-                          <Tarjeta imagen={monstergreen} />
-                          <Tarjeta imagen={monsterwhite} />
-                          <Tarjeta imagen={monsterpink} />
+                          <Tarjeta imagen={monsterblack} nombre="Monster Black" />
+                          <Tarjeta imagen={monstergreen} nombre="Monster Ultra Paradise" />
+                          <Tarjeta imagen={monsterwhite} nombre="Monster Zero Ultra" />
+                          <Tarjeta imagen={monsterpink} nombre="Monster Ultra Struberry Dream" />
                       </div>
                   </div>
               </div>
@@ -28,11 +28,11 @@ function ContenedorTargetas() {
     );
 }
 
-function Tarjeta({ imagen }) {
+function Tarjeta({ imagen, nombre }) {
     return (
         <div className="tarjeta">
-            <img src={imagen} alt="Monster Energy" />
-            <h3>Título de la Tarjeta</h3>
+            <img src={imagen} alt={nombre} />
+            <h3>{nombre}</h3>
             <p>Contenido de la tarjeta...</p>
         </div>
     );
