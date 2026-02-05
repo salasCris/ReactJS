@@ -96,35 +96,7 @@
 	}
 }
 
-/* Banner Monster Energy */
-.monsterBanner{
-	height: 400px;
-	width: 100%;
-	margin: 0;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	border-radius: 0;
-	box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	box-sizing: border-box;
-	padding: 30px;
-}
-
-.monsterContent{
-	color: white;
-	text-align: center;
-	max-width: 600px;
-}
-
-.monsterContent h2{
-	margin: 0 0 15px 0;
-	font-size: 2.5rem;
-	font-weight: bold;
-	text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-}
+/* MonsterBanner styles moved to MonsterBanner.css */
 
 .tarjeta h3{
 	margin: 10px 0;

@@ -54,6 +54,7 @@ h2{
     background-color: #1a1a1a;
     color: #00ff66;
     box-shadow: 0 0 12px rgba(0,255,102,0.4);
+    cursor: pointer;
 }
 
 

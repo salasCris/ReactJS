@@ -8,32 +8,22 @@ import monsterdivenmedio from './assets/monsterdivenmedio.jpg';
 function ContenedorTargetas() {
     return (
         <div className="ContenedorTargetas">
-              <div className="tarjetasWrapper">
-                  <div className="contenedorHorizontal">
                       <div className="tarjetas">
-                          <Tarjeta imagen={monsterblack} nombre="Monster Black" />
-                          <Tarjeta imagen={monstergreen} nombre="Monster Ultra Paradise" />
-                          <Tarjeta imagen={monsterwhite} nombre="Monster Zero Ultra" />
-                          <Tarjeta imagen={monsterpink} nombre="Monster Ultra Struberry Dream" />
+                          <Tarjeta imagen={monsterblack} titulo="Monster Black" descripcion="Sabor intenso y oscuro. Potencia máxima con una fórmula energética completa. Perfecto para quienes buscan un boost sin compromisos." />
+                          <Tarjeta imagen={monstergreen} titulo="Monster Ultra Paradise" descripcion="Un viaje tropical refrescante. Con sabor a frutas exóticas y cero azúcar, es ideal para disfrutar la energía sin culpa." />
+                          <Tarjeta imagen={monsterwhite} titulo="Monster Zero Ultra" descripcion="Energía sin calorías ni azúcar. El mismo poder de Monster con menos impacto. La opción inteligente para estar siempre activo." />
+                          <Tarjeta imagen={monsterpink} titulo="Monster Ultra Strawberry Dream" descripcion="Dulce y delicioso sabor a fresa. Energía refrescante con el toque frutal que amas. Sin azúcar, puro poder Monster." />
                       </div>
-                  </div>
-              </div>
-              <div className="monsterBanner" style={{backgroundImage: `url(${monsterdivenmedio})`}}>
-                  <div className="monsterContent">
-                      <h2>Monster Energy</h2>
-                      <p>Descubre la potencia y energía de Monster Energy. Con su fórmula única de vitaminas, cafeína y aminoácidos, Monster Energy te proporciona el boost que necesitas para conquistar cualquier desafío. Perfecto para deportes, gaming y actividades intensas.</p>
-                  </div>
-              </div>
         </div>
     );
 }
 
-function Tarjeta({ imagen, nombre }) {
+function Tarjeta(props) {
     return (
         <div className="tarjeta">
-            <img src={imagen} alt={nombre} />
-            <h3>{nombre}</h3>
-            <p>Contenido de la tarjeta...</p>
+            <img src={props.imagen} alt={props.titulo} />
+            <h3>{props.titulo}</h3>
+            <p>{props.descripcion}</p>
         </div>
     );
 }
