@@ -1,14 +1,16 @@
+
 import miLogo from './assets/monsterlogo.jpg';
 import facebook from './assets/facebook.png';
 import instagram from './assets/instagram.png';
 import telegrama from './assets/telegrama.png';
 import tiktok from './assets/tiktok.png';
 import './Encabezado.css';
-function Encabezado() {
+import PropTypes from 'prop-types';
+function Encabezado({cambiarVista}) {
     return (
         <div className="Encabezado">
             <Logo />
-            <Menu />
+            <Menu cambiarVista={cambiarVista} />
             <Redes />
         </div>
     );
@@ -22,16 +24,16 @@ function Logo() {
     );
 }
 
-function Menu() {
+function Menu({cambiarVista}) {
     return (
         <div className='menuDiv'>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Contactos</a></li>
-                <li><a href="#">Galeria</a></li>
-                <li><a href="#">Sucursales</a></li>
+                <li onClick={() => cambiarVista("Inicio")}>Inicio</li>
+                <li onClick={() => cambiarVista("AcercaDe")}>Acerca de</li>
+                <li onClick={() => cambiarVista("Productos")}>Productos</li>
+                <li onClick={() => cambiarVista("Contactos")}>Contactos</li>
+                <li onClick={() => cambiarVista("Galeria")}>Galeria</li>
+                <li onClick={() => cambiarVista("Sucursales")}>Sucursales</li>
             </ul>
         </div>
     );
@@ -49,4 +51,11 @@ function Redes(){
         </div>
     );
 }
-    export default Encabezado;
+Menu.propTypes = {
+    cambiarVista: PropTypes.func.isRequired,
+};
+
+Encabezado.propTypes = {
+    cambiarVista: PropTypes.func.isRequired,
+};
+export default Encabezado;
