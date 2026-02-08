@@ -4,12 +4,19 @@ import monstergreen from './assets/monstergreen.jpg';
 import monsterwhite from './assets/monsterwhite.jpg';
 import monsterpink from './assets/mosnterpink.jpg';
 import AcercaDe from './AcercaDe.jsx';
+import Productos from './Productos.jsx';
+import Contactos from './Contactos.jsx';
+import Galeria from './Galeria.jsx';
+import Sucursales from './Sucursales.jsx';
 
 function ContenedorTargetas({vista}) {
     const vistas = {
         "Inicio": <Inicio />,
         "AcercaDe": <AcercaDe />,
-        
+        "Productos": <Productos />,
+        "Contactos": <Contactos />,
+        "Galeria": <Galeria />,
+        "Sucursales": <Sucursales />,
     }
     return (
         <div className="contenedorDiv">
