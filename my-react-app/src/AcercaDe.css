@@ -1,0 +1,42 @@
+.acerca-container {
+    background-color: #0b0b0b; /* negro intenso */
+    color: #ffffff;            /* texto blanco */
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 0 20px rgba(0, 255, 60, 0.5); /* sombra verde neón */
+    font-family: 'Arial', sans-serif;
+}
+
+.acerca-titulo {
+    color: #00ff3c; /* verde Monster */
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ff3c;
+}
+
+.acerca-texto {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.acerca-texto strong {
+    color: #00ff3c;
+}
+
+.acerca-texto em {
+    color: #1db954;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.acerca-aviso {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #f3ff00; /* amarillo neón para advertencia */
+    text-align: center;
+}
