@@ -6,7 +6,7 @@ import monsterpink from './assets/mosnterpink.jpg';
 import AcercaDe from './AcercaDe.jsx';
 import Productos from './Productos.jsx';
 import Contactos from './Contactos.jsx';
-import Galeria from './Galeria.jsx';
+import Atletas from './Atletas.jsx';
 import Sucursales from './Sucursales.jsx';
 
 function ContenedorTargetas({vista}) {
@@ -15,7 +15,7 @@ function ContenedorTargetas({vista}) {
         "AcercaDe": <AcercaDe />,
         "Productos": <Productos />,
         "Contactos": <Contactos />,
-        "Galeria": <Galeria />,
+        "Atletas": <Atletas />,
         "Sucursales": <Sucursales />,
     }
     return (

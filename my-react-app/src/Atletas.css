@@ -1,0 +1,147 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.atletas-container {
+	width: 90vw;
+	max-width: 1400px;
+	margin: 40px auto;
+	box-sizing: border-box;
+	padding: 30px 20px;
+	color: #fff;
+}
+
+/* ===== TITULO ===== */
+.atletas-titulo {
+	text-align: center;
+	font-size: 2rem;
+	color: #00ff66;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: linear-gradient(90deg, #00ff66, #00cc55);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	margin-bottom: 20px;
+}
+
+/* ===== SUBTITULO ===== */
+.atletas-subtitulo {
+	text-align: center;
+	font-size: 1rem;
+	color: #b5b5b5;
+	margin-bottom: 30px;
+}
+
+/* ===== GRID DE ATLETAS ===== */
+.atletas-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	align-items: stretch;
+}
+
+/* ===== TARJETA DE ATLETA ===== */
+.atleta-card {
+	background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+	border-radius: 16px;
+	box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.2),
+				0 10px 30px rgba(0, 0, 0, 0.8);
+	padding: 18px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	text-align: center;
+	color: #eaeaea;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.atleta-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(0, 255, 102, 0.1), transparent);
+	transition: left 0.3s ease;
+	pointer-events: none;
+}
+
+.atleta-card:hover {
+	transform: translateY(-8px) scale(1.02);
+	box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.4),
+				0 15px 40px rgba(0, 255, 102, 0.2);
+}
+
+.atleta-card:hover::before {
+	left: 100%;
+}
+
+/* ===== IMAGEN DEL ATLETA ===== */
+.atleta-img {
+	width: 100%;
+	height: 280px;
+	object-fit: cover;
+	border-radius: 12px;
+	margin-bottom: 12px;
+	filter: contrast(1.1) saturate(1.2) brightness(1.05);
+	transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.atleta-card:hover .atleta-img {
+	filter: contrast(1.2) saturate(1.4) brightness(1.1);
+	transform: scale(1.05);
+}
+
+/* ===== NOMBRE DEL ATLETA ===== */
+.atleta-card h3 {
+	margin: 12px 0 8px 0;
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #00ff66;
+	word-wrap: break-word;
+	text-transform: uppercase;
+	text-shadow: 0 0 6px #00ff66;
+}
+
+/* ===== DISCIPLINA / DEPORTE ===== */
+.atleta-card p {
+	margin: 0 0 16px 0;
+	color: #b5b5b5;
+	font-size: 0.95rem;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 40px;
+	text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+	.atletas-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.atletas-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+	.atleta-img {
+		height: 220px;
+	}
+}
+
+@media (max-width: 480px) {
+	.atletas-grid {
+		grid-template-columns: 1fr;
+		gap: 14px;
+	}
+	.atleta-img {
+		height: 180px;
+	}
+}

@@ -1,0 +1,118 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.sucursales-container {
+	width: 90vw;
+	max-width: 1400px;
+	margin: 40px auto;
+	box-sizing: border-box;
+	padding: 30px 20px;
+	color: #fff;
+	background: #0b0b0b;
+	border-radius: 20px;
+}
+
+/* ===== TITULO ===== */
+.sucursales-container h2 {
+	text-align: center;
+	font-size: 2rem;
+	color: #00ff66;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	background: linear-gradient(90deg, #00ff66, #00cc55);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	margin-bottom: 30px;
+}
+
+/* ===== GRID DE SUCURSALES ===== */
+.sucursales-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	align-items: stretch;
+}
+
+/* ===== TARJETA DE SUCURSAL ===== */
+.sucursal-card {
+	background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+	border-radius: 16px;
+	box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.2),
+				0 10px 30px rgba(0, 0, 0, 0.8);
+	padding: 18px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	color: #eaeaea;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.sucursal-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(0, 255, 102, 0.1), transparent);
+	transition: left 0.3s ease;
+	pointer-events: none;
+}
+
+.sucursal-card:hover {
+	transform: translateY(-8px) scale(1.02);
+	box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.4),
+				0 15px 40px rgba(0, 255, 102, 0.2);
+}
+
+.sucursal-card:hover::before {
+	left: 100%;
+}
+
+/* ===== NOMBRE SUCURSAL ===== */
+.sucursal-card h3 {
+	margin: 12px 0 8px 0;
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #00ff66;
+	word-wrap: break-word;
+	text-transform: uppercase;
+	text-shadow: 0 0 6px #00ff66;
+}
+
+/* ===== DIRECCION ===== */
+.sucursal-card p {
+	margin: 0 0 12px 0;
+	color: #b5b5b5;
+	font-size: 0.95rem;
+	min-height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+	.sucursales-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.sucursales-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+}
+
+@media (max-width: 480px) {
+	.sucursales-grid {
+		grid-template-columns: 1fr;
+		gap: 14px;
+	}
+}

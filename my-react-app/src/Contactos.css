@@ -1,0 +1,151 @@
+/* ===== CONTENEDOR ===== */
+.contactos-container {
+	width: 90vw;
+	max-width: 520px;
+	margin: 60px auto;
+	padding: 35px;
+	background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+	border-radius: 16px;
+	box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.2),
+				0 10px 30px rgba(0, 255, 102, 0.8);
+	color: #eaeaea;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.contactos-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(0, 255, 102, 0.1), transparent);
+	transition: left 0.3s ease;
+	pointer-events: none;
+}
+
+.contactos-container:hover {
+	transform: translateY(-5px) scale(1.02);
+	box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.4),
+				0 15px 40px rgba(0, 255, 102, 0.2);
+}
+
+.contactos-container:hover::before {
+	left: 100%;
+}
+
+/* ===== TITULOS ===== */
+.titulo {
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #00ff66;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-shadow: 0 0 6px #00ff66;
+	margin-bottom: 20px;
+	background: linear-gradient(90deg, #00ff66, #00cc55);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.subtitulo {
+	text-align: center;
+	margin-top: 10px;
+	color: #00ff66;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-weight: 600;
+}
+
+/* ===== TEXTO INFO ===== */
+.info-texto {
+	text-align: center;
+	font-size: 14px;
+	margin: 15px 0 25px 0;
+	color: #b5b5b5;
+}
+
+/* ===== FORMULARIO ===== */
+.formulario {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.campo {
+	display: flex;
+	flex-direction: column;
+}
+
+.campo label {
+	margin-bottom: 6px;
+	font-size: 14px;
+	color: #00ff66;
+}
+
+/* ===== INPUTS ===== */
+.campo input,
+.campo textarea {
+	padding: 12px;
+	background-color: #0b0b0b;
+	border: 2px solid #00ff66;
+	border-radius: 12px;
+	color: #eaeaea;
+	font-size: 14px;
+	outline: none;
+	transition: all 0.3s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+	box-shadow: 0 0 12px #00ff66;
+	border-color: #00dd66;
+}
+
+/* ===== BOTON ===== */
+.boton-enviar {
+	padding: 14px;
+	background: linear-gradient(90deg, #00ff66, #00cc55);
+	border: none;
+	border-radius: 12px;
+	font-weight: bold;
+	font-size: 15px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	color: #000;
+	letter-spacing: 1px;
+}
+
+.boton-enviar:hover {
+	background: linear-gradient(90deg, #00ff88, #00dd66);
+	box-shadow: 0 5px 15px rgba(0, 255, 102, 0.4);
+	transform: scale(1.05);
+}
+
+.boton-enviar:active {
+	transform: scale(0.98);
+}
+
+/* ===== MENSAJE EXITO ===== */
+.success-message {
+	text-align: center;
+	color: #00ff66;
+	font-weight: bold;
+	text-shadow: 0 0 10px #00ff66;
+	margin-bottom: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+	.contactos-container {
+		padding: 20px;
+	}
+	.titulo {
+		font-size: 1.6rem;
+	}
+}

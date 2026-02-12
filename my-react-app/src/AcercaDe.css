@@ -1,42 +1,96 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
 .acerca-container {
-    background-color: #0b0b0b; /* negro intenso */
-    color: #ffffff;            /* texto blanco */
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 800px;
-    margin: 40px auto;
-    box-shadow: 0 0 20px rgba(0, 255, 60, 0.5); /* sombra verde neón */
-    font-family: 'Arial', sans-serif;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.2),
+              0 10px 30px rgba(0, 0, 0, 0.8);
+  color: #eaeaea;
+  line-height: 1.6;
+  transition: all 0.3s ease;
 }
 
+/* ===== TITULO ===== */
 .acerca-titulo {
-    color: #00ff3c; /* verde Monster */
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #00ff3c;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #00ff66;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px #00ff66;
+  margin-bottom: 25px;
+  background: linear-gradient(90deg, #00ff66, #00cc55);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+/* ===== PARRAFOS ===== */
 .acerca-texto {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
+  font-size: 1rem;
+  color: #b5b5b5;
+  margin-bottom: 18px;
 }
 
 .acerca-texto strong {
-    color: #00ff3c;
+  color: #00ff66;
+  font-weight: bold;
 }
 
 .acerca-texto em {
-    color: #1db954;
-    font-style: normal;
-    font-weight: bold;
+  font-style: italic;
+  color: #00ff88;
 }
 
+/* ===== AVISO ===== */
 .acerca-aviso {
-    display: block;
-    margin-top: 20px;
+  display: block;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #7a7a7a;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ===== HOVER / INTERACTIVO (opcional) ===== */
+.acerca-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(0, 255, 102, 0.4),
+              0 15px 35px rgba(0, 255, 102, 0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .acerca-container {
+    padding: 20px 16px;
+  }
+
+  .acerca-titulo {
+    font-size: 1.6rem;
+  }
+
+  .acerca-texto {
+    font-size: 0.95rem;
+  }
+
+  .acerca-aviso {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .acerca-container {
+    padding: 16px 12px;
+  }
+
+  .acerca-titulo {
+    font-size: 1.4rem;
+  }
+
+  .acerca-texto {
     font-size: 0.9rem;
-    color: #f3ff00; /* amarillo neón para advertencia */
-    text-align: center;
+  }
 }
