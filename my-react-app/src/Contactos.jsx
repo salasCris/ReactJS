@@ -71,6 +71,19 @@ function Contactos() {
         </div>
 
         <div className="campo">
+          <label>Teléfono:</label>
+          <input
+            type="tel"
+            name="telefono"
+            value={formData.telefono}
+            onChange={handleChange}
+            required
+            pattern="[0-9+ ]{9,15}"
+           
+          />
+        </div>
+
+        <div className="campo">
           <label>Mensaje:</label>
           <textarea
             name="mensaje"

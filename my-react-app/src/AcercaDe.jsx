@@ -1,4 +1,5 @@
 import './AcercaDe.css';
+
 function AcercaDe() {
     return (
         <div className="acerca-container">
@@ -6,25 +7,47 @@ function AcercaDe() {
 
             <p className="acerca-texto">
                 <strong>Monster Energy</strong> es una de las bebidas energéticas
-                más populares a nivel mundial, reconocida por su imagen audaz
-                y su vínculo con los deportes extremos, la música y la cultura urbana.
+                más reconocidas a nivel mundial. Destaca por su identidad audaz,
+                su diseño impactante y su fuerte conexión con los deportes extremos,
+                la música, los esports y la cultura urbana.
             </p>
 
             <p className="acerca-texto">
-                Su fórmula incluye <em>cafeína</em>, <em>taurina</em> y vitaminas
-                del complejo B, ingredientes que ayudan a aumentar la energía,
-                la concentración y el rendimiento físico y mental.
+                Su fórmula contiene <em>cafeína</em>, <em>taurina</em> y vitaminas
+                del complejo B, ingredientes diseñados para aumentar la energía,
+                mejorar la concentración y potenciar el rendimiento físico y mental.
             </p>
 
-            <p className="acerca-texto">
-                Más que una bebida, Monster Energy representa un estilo de vida.
-                La marca patrocina competencias de motocross, skate, esports y
-                eventos musicales, conectando con personas activas y apasionadas.
-            </p>
+            <div className="acerca-seccion">
+                <h3 className="acerca-subtitulo">🎯 Misión</h3>
+                <p className="acerca-texto">
+                    Impulsar a las personas a superar sus límites, ofreciendo
+                    bebidas energéticas de alta calidad que acompañen un estilo
+                    de vida activo, dinámico y apasionado.
+                </p>
+            </div>
+
+            <div className="acerca-seccion">
+                <h3 className="acerca-subtitulo">🚀 Visión</h3>
+                <p className="acerca-texto">
+                    Ser la marca líder mundial en bebidas energéticas,
+                    inspirando a nuevas generaciones a vivir con intensidad,
+                    innovación y actitud desafiante.
+                </p>
+            </div>
+
+            <div className="acerca-seccion">
+                <h3 className="acerca-subtitulo">⚡ Valores</h3>
+                <p className="acerca-texto">
+                    Pasión, autenticidad, innovación y compromiso con la cultura
+                    deportiva y urbana. Monster Energy apoya talentos emergentes
+                    y eventos internacionales que representan adrenalina y creatividad.
+                </p>
+            </div>
 
             <small className="acerca-aviso">
-                Consumir con moderación. No recomendado para niños ni personas
-                sensibles a la cafeína.
+                Consumir con moderación. No recomendado para niños, mujeres
+                embarazadas o personas sensibles a la cafeína.
             </small>
         </div>
     );
