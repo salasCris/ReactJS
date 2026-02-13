@@ -96,6 +96,25 @@
 	text-align: center;
 }
 
+/* ===== MAPA EN TARJETA ===== */
+.sucursal-mapa {
+	width: 100%;
+	height: 180px;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-top: 8px;
+	box-shadow: 0 4px 16px rgba(0,255,102,0.10), 0 1.5px 6px rgba(0,0,0,0.18);
+	background: #181818;
+}
+
+@media (max-width: 768px) {
+	.sucursal-mapa { height: 140px; }
+}
+
+@media (max-width: 480px) {
+	.sucursal-mapa { height: 110px; }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
 	.sucursales-grid {
