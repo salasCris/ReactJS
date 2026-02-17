@@ -6,6 +6,7 @@ import telegrama from './assets/telegrama.png';
 import tiktok from './assets/tiktok.png';
 import './Encabezado.css';
 import PropTypes from 'prop-types';
+import Clima from './Clima';
 function Encabezado({cambiarVista}) {
     return (
         <div className="Encabezado">
@@ -48,6 +49,7 @@ function Redes(){
                 <li className="redes"> <a href="#"> <img src={telegrama} alt="Logo de Telegrama" /></a></li>
                 <li className="redes"> <a href="#"> <img src={tiktok} alt="Logo de Tiktok" /></a></li>
             </ul>
+            <Clima />
         </div>
     );
 }
