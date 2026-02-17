@@ -1,6 +1,6 @@
 import './MonsterBanner.css';
 import monsterdivenmedio from './assets/monsterdivenmedio.jpg';
-import Mapa from './Mapa';
+import MapaGeo from './MapaGeo';
 
 function MonsterBanner() {
     return (
@@ -12,7 +12,7 @@ function MonsterBanner() {
                 </div>
             </div>
             <div className="bannerMapFullWidth">
-                <Mapa lat={19.4326} lng={-99.1332} nombre_sucursal="Sucursal Centro" />
+                <MapaGeo/>
             </div>
         </>
     );
