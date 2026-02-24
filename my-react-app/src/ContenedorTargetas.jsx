@@ -9,6 +9,8 @@ import Contactos from './Contactos.jsx';
 import Atletas from './Atletas.jsx';
 import Sucursales from './Sucursales.jsx';
 import Mapa from './Mapa';
+import Carrito from './Carrito.jsx';
+import Usuario from './UsuariosTabla.jsx';
 
 function ContenedorTargetas({vista}) {
     const vistas = {
@@ -18,6 +20,8 @@ function ContenedorTargetas({vista}) {
         "Contactos": <Contactos />,
         "Atletas": <Atletas />,
         "Sucursales": <Sucursales />,
+        "Carrito": <Carrito />,
+        "Usuarios": <Usuario />,
     }
     return (
         <div className="contenedorDiv">
