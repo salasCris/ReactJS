@@ -4,6 +4,7 @@
 import './Productos.css';
 import { useEffect, useState } from 'react';
 import api from './Services/Api';
+import RegistrarProductos from './RegistrarProductos';
 
 function Productos() {
     const [productos, setProductos] = useState([]);
@@ -26,6 +27,7 @@ function Productos() {
 
     return (
         <div className="productos">
+            <RegistrarProductos />
             <h2>Catálogo de Productos</h2>
             {productos.map((producto) => (
                 <div className="producto" key={producto.id}>

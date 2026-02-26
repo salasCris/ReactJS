@@ -1,0 +1,83 @@
+.registro-productos {
+  --monster-black: #0b0b0b;
+  --monster-dark: #0f0f0f;
+  --monster-green: #00ff66;
+  --monster-green-strong: #00cc55;
+  --monster-text: #f2f2f2;
+  --monster-border: rgba(0, 255, 102, 0.25);
+  --monster-glow: rgba(0, 255, 102, 0.35);
+  width: 100%;
+  max-width: 560px;
+  margin: 36px auto;
+  grid-column: 1 / -1;
+  justify-self: center;
+  padding: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(0, 255, 102, 0.2), transparent 38%),
+    linear-gradient(160deg, var(--monster-black) 20%, var(--monster-dark) 100%);
+  border: 1px solid var(--monster-border);
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 22px var(--monster-glow);
+}
+
+.registro-productos__titulo {
+  margin: 0 0 20px;
+  color: var(--monster-green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 800;
+  text-shadow: 0 0 10px var(--monster-glow);
+}
+
+.registro-productos__form {
+  display: grid;
+  gap: 10px;
+}
+
+.registro-productos__form label {
+  color: var(--monster-text);
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+}
+
+.registro-productos__form input {
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #0f0f0f;
+  color: var(--monster-text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.registro-productos__form input:focus {
+  border-color: var(--monster-green);
+  box-shadow: 0 0 0 3px rgba(0, 255, 102, 0.2);
+  transform: translateY(-1px);
+}
+
+.registro-productos__form button {
+  margin-top: 10px;
+  padding: 12px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(120deg, var(--monster-green) 0%, var(--monster-green-strong) 100%);
+  color: #0a0a0a;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 255, 102, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.registro-productos__form button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #00ff88, #00dd66);
+  box-shadow: 0 10px 22px rgba(0, 255, 102, 0.45);
+}
+
+.registro-productos__form button:active {
+  transform: translateY(0);
+}
