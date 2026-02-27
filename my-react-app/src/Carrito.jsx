@@ -52,8 +52,11 @@ function Carrito() {
               </li>
             ))}
           </ul>
-          <button type="button" className="comprar">
+          <button type="button" className="comprar-carrito">
             Comprar
+          </button>
+          <button type="button" className="eliminar-carrito">
+            Eliminar
           </button>
         </div>
       ))}
