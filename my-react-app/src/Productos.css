@@ -118,6 +118,17 @@
 	letter-spacing: 1px;
 }
 
+.producto button.eliminar {
+	background: linear-gradient(90deg, #ff4d4d, #cc0000);
+	color: #fff;
+	margin-top: 8px;
+}
+
+.producto button.eliminar:hover {
+	background: linear-gradient(90deg, #ff6b6b, #d90429);
+	box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+}
+
 .producto button:hover {
 	background: linear-gradient(90deg, #00ff88, #00dd66);
 	transform: scale(1.05);

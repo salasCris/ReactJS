@@ -83,3 +83,77 @@
 .carrito-btn:hover{
   background: #00cc55;
 }
+
+/* Clases usadas en Carrito.jsx */
+.carritos {
+  padding: 40px;
+  background: #000;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.carritos h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #00ff6a;
+}
+
+.carrito-fecha {
+  color: #b8b8b8;
+  margin: 6px 0 14px;
+}
+
+.carrito-productos-titulo {
+  color: #e8e8e8;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.carrito-lista {
+  padding-left: 18px;
+}
+
+.carrito-item {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.carrito-item-x {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 77, 77, 0.5);
+  background: #2a0f0f;
+  color: #ff6b6b;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.carrito-item-x:hover {
+  background: #ff4d4d;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.35);
+}
+
+.comprar {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00ff66, #00cc55);
+  color: #031207;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.comprar:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

@@ -12,11 +12,11 @@ function Carrito() {
       try {
         const response = await api.get('/carts');
         setCarritos(response.data);
-        // Obtener productos únicos
-        const ids = Array.from(new Set(response.data.flatMap(c => c.products.map(p => p.productId))));
+        // Obtener productos unicos
+        const ids = Array.from(new Set(response.data.flatMap((c) => c.products.map((p) => p.productId))));
         // Obtener detalles de productos
         const prods = {};
-        for (let id of ids) {
+        for (const id of ids) {
           const res = await api.get(`/products/${id}`);
           prods[id] = res.data;
         }
@@ -40,14 +40,21 @@ function Carrito() {
           <div className="carrito-id">{carrito.id}</div>
           <div className="carrito-fecha">{carrito.date}</div>
           <div className="carrito-productos-titulo">Productos</div>
-          <ul>
+          <ul className="carrito-lista">
             {carrito.products.map((prod, idx) => (
-              <li key={idx}>
-                Producto #{prod.productId} — Cantidad: {prod.quantity}
+              <li key={idx} className="carrito-item">
+                <span>
+                  Producto #{prod.productId} - Cantidad: {prod.quantity}
+                </span>
+                <button type="button" className="carrito-item-x" aria-label={`Eliminar producto ${prod.productId}`}>
+                  X
+                </button>
               </li>
             ))}
           </ul>
-          <button className="comprar" disabled>Comprar</button>
+          <button type="button" className="comprar">
+            Comprar
+          </button>
         </div>
       ))}
     </div>

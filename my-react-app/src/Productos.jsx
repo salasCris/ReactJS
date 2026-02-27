@@ -36,6 +36,7 @@ function Productos() {
                     <p>{producto.description ? producto.description : 'Sin descripción'}</p>
                     <p className="precio">${producto.price}</p>
                     <button>Añadir al carrito</button>
+                    <button className="eliminar">Eliminar</button>
                 </div>
             ))}
         </div>
