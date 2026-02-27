@@ -1,0 +1,124 @@
+.registro-usuario {
+  --monster-black: #0b0b0b;
+  --monster-dark: #121212;
+  --monster-green: #00ff66;
+  --monster-green-strong: #00cc55;
+  --monster-text: #f3f3f3;
+  --monster-muted: #b7b7b7;
+  --monster-border: rgba(0, 255, 102, 0.24);
+  --monster-glow: rgba(0, 255, 102, 0.32);
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto 32px;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid var(--monster-border);
+  background:
+    radial-gradient(circle at top right, rgba(0, 255, 102, 0.2), transparent 36%),
+    linear-gradient(155deg, var(--monster-black) 20%, var(--monster-dark) 100%);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.52), 0 0 20px var(--monster-glow);
+}
+
+.registro-usuario__titulo {
+  margin: 0 0 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--monster-green);
+  font-weight: 800;
+  text-shadow: 0 0 10px var(--monster-glow);
+}
+
+.registro-usuario__form {
+  display: grid;
+  gap: 10px;
+}
+
+.registro-usuario__form label {
+  color: var(--monster-text);
+  font-size: 0.95rem;
+  letter-spacing: 0.35px;
+}
+
+.registro-usuario__form input {
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid #2f2f2f;
+  background: #0e0e0e;
+  color: var(--monster-text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.registro-usuario__form input::placeholder {
+  color: var(--monster-muted);
+}
+
+.registro-usuario__form input:focus {
+  border-color: var(--monster-green);
+  box-shadow: 0 0 0 3px rgba(0, 255, 102, 0.2);
+  transform: translateY(-1px);
+}
+
+.registro-usuario__acciones {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.registro-usuario__btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.registro-usuario__btn:hover {
+  transform: translateY(-2px);
+}
+
+.registro-usuario__btn:active {
+  transform: translateY(0);
+}
+
+.registro-usuario__btn--cancelar {
+  background: #1f1f1f;
+  color: #e5e5e5;
+  border: 1px solid #3a3a3a;
+}
+
+.registro-usuario__btn--cancelar:hover {
+  filter: brightness(1.08);
+}
+
+.registro-usuario__btn--registrar {
+  background: linear-gradient(120deg, var(--monster-green) 0%, var(--monster-green-strong) 100%);
+  color: #090909;
+  box-shadow: 0 8px 18px rgba(0, 255, 102, 0.35);
+}
+
+.registro-usuario__btn--registrar:hover {
+  background: linear-gradient(90deg, #00ff88, #00dd66);
+  box-shadow: 0 10px 24px rgba(0, 255, 102, 0.44);
+}
+
+@media (max-width: 640px) {
+  .registro-usuario {
+    padding: 20px;
+    margin-bottom: 22px;
+  }
+
+  .registro-usuario__titulo {
+    letter-spacing: 1.5px;
+    font-size: 1.1rem;
+  }
+
+  .registro-usuario__acciones {
+    grid-template-columns: 1fr;
+  }
+}
