@@ -1,13 +1,14 @@
 import './Usuario.css';
 import { useEffect, useState } from 'react';
-import api from './Services/api';
+import api from './Services/Api';
 import RegistrarUsuario from './RegistrarUsuario';
 
 function Usuario() {
     const [usuarios, setUsuarios] = useState([]);
     const [cargando, setCargando] = useState(true);
-    useEffect(() => {
-        const obtenerUsuarios = async () => {
+    const [usuarioSeleccionado, setUsuarioSeleccionado] =useState(null);
+
+     const obtenerUsuarios = async () => {
             try{
                 const response = await api.get('/users');
                 setUsuarios(response.data);
@@ -17,6 +18,8 @@ function Usuario() {
                 setCargando(false);
             }
         };
+
+    useEffect(() => {
         obtenerUsuarios();
     },[]);
 
@@ -24,7 +27,11 @@ function Usuario() {
 
     return (
         <div className="usuarios">
-            <RegistrarUsuario />
+            <RegistrarUsuario 
+            usuarioEditado={usuarioSeleccionado}
+            limpiarSeleccion={setUsuarioSeleccionado(null)}
+            onActualizacionExitosa={obtenerUsuarios}
+            />
             <h1>Usuarios Registrados</h1>
             <table className="tabla-usuarios">
                 <thead>
@@ -50,7 +57,7 @@ function Usuario() {
                             <td>{usuario.email}</td>
                             <td>{usuario.username}</td>
                             <td>{usuario.password}</td>
-                            <td><button className="editar">Editar</button></td>
+                            <td><button className="editar" onClick={()=>setUsuarioSeleccionado(usuario)}>Editar</button></td>
                             <td><button className="eliminar">Eliminar</button></td>
                         </tr>
                     ))}
