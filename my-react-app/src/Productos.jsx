@@ -9,25 +9,30 @@ import RegistrarProductos from './RegistrarProductos';
 function Productos() {
     const [productos, setProductos] = useState([]);
     const [cargando, setCargando] = useState(true);
-    useEffect(() => {
-        const obtenerProductos = async () => {
-            try{
-                const response = await api.get('/products');
-                setProductos(response.data);
-            }catch(error){
-                console.error('error al obtener productos', error);
-            }finally{
-                setCargando(false);
-            }
-        };
-        obtenerProductos();
-    },[]);
+    const [productoSeleccionado, setProductoSeleccionado] = useState(null);
 
-    if(cargando) return <p>Cargando productos.......</p>
+    const obtenerProductos = async () => {
+        try {
+            const response = await api.get('/products');
+            setProductos(response.data);
+        } catch (error) {
+            console.error('error al obtener productos', error);
+        } finally {
+            setCargando(false);
+        }
+    };
+    useEffect(() => {
+        obtenerProductos();
+    }, []);
+
+    if (cargando) return <p>Cargando productos.......</p>
 
     return (
         <div className="productos">
-            <RegistrarProductos />
+            <RegistrarProductos
+                productoEditado={productoSeleccionado}
+                limpiarSeleccion={() => setProductoSeleccionado(null)}
+                onActualizacionExitosa={obtenerProductos} />
             <h2>Catálogo de Productos</h2>
             {productos.map((producto) => (
                 <div className="producto" key={producto.id}>
@@ -37,7 +42,7 @@ function Productos() {
                     <p className="precio">${producto.price}</p>
                     <button>Añadir al carrito</button>
                     <button className="eliminar">Eliminar</button>
-                    <button className="editar">Editar</button>
+                    <button className="editar" onClick={()=>setProductoSeleccionado(producto)}>Editar</button>
                 </div>
             ))}
         </div>
