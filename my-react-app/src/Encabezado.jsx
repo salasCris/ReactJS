@@ -7,7 +7,7 @@ import tiktok from './assets/tiktok.png';
 import './Encabezado.css';
 import PropTypes from 'prop-types';
 import Clima from './Clima';
-function Encabezado({cambiarVista}) {
+function Encabezado({ cambiarVista }) {
     return (
         <div className="Encabezado">
             <Logo />
@@ -25,7 +25,7 @@ function Logo() {
     );
 }
 
-function Menu({cambiarVista}) {
+function Menu({ cambiarVista }) {
     return (
         <div className='menuDiv'>
             <ul>
@@ -37,12 +37,14 @@ function Menu({cambiarVista}) {
                 <li onClick={() => cambiarVista("Contactos")}>Contacto</li>
                 <li onClick={() => cambiarVista("Atletas")}>Atletas</li>
                 <li onClick={() => cambiarVista("Sucursales")}>Sucursales</li>
+                <li onClick={() => cambiarVista("Login")}>Login</li>
+
             </ul>
         </div>
     );
 }
 
-function Redes(){
+function Redes() {
     return (
         <div className='redesDiv'>
             <ul>

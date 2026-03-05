@@ -11,6 +11,7 @@ import Sucursales from './Sucursales.jsx';
 import Mapa from './Mapa';
 import Carrito from './Carrito.jsx';
 import Usuario from './UsuariosTabla.jsx';
+import Login from './Login.jsx';
 
 function ContenedorTargetas({vista}) {
     const vistas = {
@@ -22,6 +23,7 @@ function ContenedorTargetas({vista}) {
         "Sucursales": <Sucursales />,
         "Carrito": <Carrito />,
         "Usuarios": <Usuario />,
+        "Login": <Login />,
     }
     return (
         <div className="contenedorDiv">
