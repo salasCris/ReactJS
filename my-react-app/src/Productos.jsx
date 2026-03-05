@@ -37,6 +37,7 @@ function Productos() {
                     <p className="precio">${producto.price}</p>
                     <button>Añadir al carrito</button>
                     <button className="eliminar">Eliminar</button>
+                    <button className="editar">Editar</button>
                 </div>
             ))}
         </div>

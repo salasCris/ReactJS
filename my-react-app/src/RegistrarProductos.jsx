@@ -18,6 +18,7 @@ function RegistrarProductos() {
                 <label>Imagen:</label>
                 <input type="text" name="imagen" />
                 <button type="submit">Registrar</button>
+                <button type="registro-usuario__btn registro-usuario__btn--cancelar">Cancelar</button>
             </form>
         </div>
     );

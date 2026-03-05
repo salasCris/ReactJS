@@ -29,7 +29,7 @@ function Usuario() {
         <div className="usuarios">
             <RegistrarUsuario 
             usuarioEditado={usuarioSeleccionado}
-            limpiarSeleccion={setUsuarioSeleccionado(null)}
+            limpiarSeleccion={() => setUsuarioSeleccionado(null)}
             onActualizacionExitosa={obtenerUsuarios}
             />
             <h1>Usuarios Registrados</h1>
@@ -50,13 +50,20 @@ function Usuario() {
                 <tbody>
                     {usuarios.map((usuario) => (
                         <tr key={usuario.id}>
-                            <td>{usuario.name.firstname}</td>
-                            <td>{usuario.name.lastname}</td>
-                            <td>{usuario.address.street} {usuario.address.number} {usuario.address.city} {usuario.address.zipcode}</td>
-                            <td>{usuario.phone}</td>
-                            <td>{usuario.email}</td>
-                            <td>{usuario.username}</td>
-                            <td>{usuario.password}</td>
+                            <td>{usuario?.name?.firstname || '-'}</td>
+                            <td>{usuario?.name?.lastname || '-'}</td>
+                            <td>
+                                {[
+                                    usuario?.address?.street,
+                                    usuario?.address?.number,
+                                    usuario?.address?.city,
+                                    usuario?.address?.zipcode,
+                                ].filter(Boolean).join(' ') || '-'}
+                            </td>
+                            <td>{usuario?.phone || '-'}</td>
+                            <td>{usuario?.email || '-'}</td>
+                            <td>{usuario?.username || '-'}</td>
+                            <td>{usuario?.password || '-'}</td>
                             <td><button className="editar" onClick={()=>setUsuarioSeleccionado(usuario)}>Editar</button></td>
                             <td><button className="eliminar">Eliminar</button></td>
                         </tr>

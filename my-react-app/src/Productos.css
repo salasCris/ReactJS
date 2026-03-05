@@ -118,6 +118,17 @@
 	letter-spacing: 1px;
 }
 
+.producto button.editar {
+	background: linear-gradient(90deg, #9e9e9e, #757575);
+	color: #fff;
+	margin-top: 8px;
+}
+
+.producto button.editar:hover {
+	background: linear-gradient(90deg, #bdbdbd, #8d8d8d);
+	box-shadow: 0 5px 15px rgba(158, 158, 158, 0.45);
+}
+
 .producto button.eliminar {
 	background: linear-gradient(90deg, #ff4d4d, #cc0000);
 	color: #fff;

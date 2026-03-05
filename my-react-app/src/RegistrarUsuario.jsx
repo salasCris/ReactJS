@@ -30,10 +30,11 @@ function RegistrarUsuario({usuarioEditado, limpiarSeleccion, onActualizacionExit
     const nuevoUsuario = {username, email, password}
     try{
         if(usuarioEditado){
-          const respuesta = await api.put(`/user/${usuarioEditado.id}`, nuevoUsuario);
+          const respuesta = await api.put(`/users/${usuarioEditado.id}`, nuevoUsuario);
           console.log('Usuario actualizado cheeeeeeee', respuesta.data);
           alert('Usuario actualizado con exito brooo');
-          limpiarSeleccion();
+          if (limpiarSeleccion) limpiarSeleccion();
+          resetForm();
         }else{
           const respuesta=await api.post('/users/', nuevoUsuario);
           console.log('Usuario Registrado consha su mare', respuesta.data);
@@ -61,7 +62,16 @@ function RegistrarUsuario({usuarioEditado, limpiarSeleccion, onActualizacionExit
         <label>Password</label>
         <input type="password" name="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <div className="registro-usuario__acciones">
-          <button type="button" className="registro-usuario__btn registro-usuario__btn--cancelar">Cancelar</button>
+          <button
+            type="button"
+            className="registro-usuario__btn registro-usuario__btn--cancelar"
+            onClick={() => {
+              resetForm();
+              if (limpiarSeleccion) limpiarSeleccion();
+            }}
+          >
+            Cancelar
+          </button>
           <button type="submit" className="registro-usuario__btn registro-usuario__btn--registrar">Registrar</button>
         </div>
 

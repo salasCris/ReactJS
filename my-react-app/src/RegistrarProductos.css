@@ -81,3 +81,13 @@
 .registro-productos__form button:active {
   transform: translateY(0);
 }
+
+.registro-usuario__btn--cancelar {
+  background: #1f1f1f;
+  color: #e5e5e5;
+  border: 1px solid #3a3a3a;
+}
+
+.registro-usuario__btn--cancelar:hover {
+  filter: brightness(1.08);
+}
