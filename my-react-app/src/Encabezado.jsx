@@ -1,5 +1,4 @@
-
-import miLogo from './assets/monsterlogo.jpg';
+﻿import miLogo from './assets/monsterlogo.jpg';
 import facebook from './assets/facebook.png';
 import instagram from './assets/instagram.png';
 import telegrama from './assets/telegrama.png';
@@ -7,6 +6,8 @@ import tiktok from './assets/tiktok.png';
 import './Encabezado.css';
 import PropTypes from 'prop-types';
 import Clima from './Clima';
+import { useAuth } from './AuthContext';
+
 function Encabezado({ cambiarVista }) {
     return (
         <div className="Encabezado">
@@ -26,19 +27,24 @@ function Logo() {
 }
 
 function Menu({ cambiarVista }) {
+    const { isLoggedIn, logout } = useAuth();
     return (
         <div className='menuDiv'>
             <ul>
                 <li onClick={() => cambiarVista("Inicio")}>Inicio</li>
                 <li onClick={() => cambiarVista("AcercaDe")}>Acerca de</li>
                 <li onClick={() => cambiarVista("Productos")}>Productos</li>
-                <li onClick={() => cambiarVista("Usuarios")}>Usuarios</li>
-                <li onClick={() => cambiarVista("Carrito")}>Carrito</li>
+                {isLoggedIn ? (
+                <>
+                 <li onClick={() => cambiarVista("Usuarios")}>Usuarios</li>
+                 <li onClick={() => cambiarVista("Carrito")}>Carrito</li>
+                </>) : (
+                     <li onClick={() => cambiarVista("Login")}>Login</li>
+                )}
                 <li onClick={() => cambiarVista("Contactos")}>Contacto</li>
                 <li onClick={() => cambiarVista("Atletas")}>Atletas</li>
                 <li onClick={() => cambiarVista("Sucursales")}>Sucursales</li>
-                <li onClick={() => cambiarVista("Login")}>Login</li>
-
+                <li onClick={logout}>Cerrar sesion</li>
             </ul>
         </div>
     );
@@ -57,6 +63,7 @@ function Redes() {
         </div>
     );
 }
+
 Menu.propTypes = {
     cambiarVista: PropTypes.func.isRequired,
 };
@@ -64,4 +71,5 @@ Menu.propTypes = {
 Encabezado.propTypes = {
     cambiarVista: PropTypes.func.isRequired,
 };
+
 export default Encabezado;

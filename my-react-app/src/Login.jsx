@@ -1,11 +1,13 @@
-import './Login.css';
+﻿import './Login.css';
 import { useState } from 'react';
 import api from './Services/Api';
+import { useAuth } from './AuthContext';
 
 function Login({ onLoginExitoso }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const { login } = useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ function Login({ onLoginExitoso }) {
       });
 
       const token = response.data.token;
-      localStorage.setItem('authToken', token);
+      login(token);
 
       alert('Login exitoso!');
       if (onLoginExitoso) onLoginExitoso(token);
