@@ -12,17 +12,21 @@ import Mapa from './Mapa';
 import Carrito from './Carrito.jsx';
 import Usuario from './UsuariosTabla.jsx';
 import Login from './Login.jsx';
+import Categorias from './Categorias.jsx';
+import { useAuth } from './AuthContext';
 
 function ContenedorTargetas({vista}) {
+    const { isLoggedIn } = useAuth();
     const vistas = {
         "Inicio": <Inicio />,
         "AcercaDe": <AcercaDe />,
-        "Productos": <Productos />,
+        "Productos": <Productos isLoggedIn={isLoggedIn} />,
         "Contactos": <Contactos />,
         "Atletas": <Atletas />,
         "Sucursales": <Sucursales />,
         "Carrito": <Carrito />,
         "Usuarios": <Usuario />,
+        "Categorias": <Categorias />,
         "Login": <Login />,
     }
     return (

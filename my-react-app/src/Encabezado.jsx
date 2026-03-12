@@ -28,6 +28,10 @@ function Logo() {
 
 function Menu({ cambiarVista }) {
     const { isLoggedIn, logout } = useAuth();
+    const handleLogout = () => {
+        logout();
+        cambiarVista("Login");
+    };
     return (
         <div className='menuDiv'>
             <ul>
@@ -38,13 +42,14 @@ function Menu({ cambiarVista }) {
                 <>
                  <li onClick={() => cambiarVista("Usuarios")}>Usuarios</li>
                  <li onClick={() => cambiarVista("Carrito")}>Carrito</li>
+                 <li onClick={() => cambiarVista("Categorias")}>Categorias</li>
+                 <li onClick={handleLogout}>Cerrar sesion</li>
                 </>) : (
                      <li onClick={() => cambiarVista("Login")}>Login</li>
                 )}
                 <li onClick={() => cambiarVista("Contactos")}>Contacto</li>
                 <li onClick={() => cambiarVista("Atletas")}>Atletas</li>
                 <li onClick={() => cambiarVista("Sucursales")}>Sucursales</li>
-                <li onClick={logout}>Cerrar sesion</li>
             </ul>
         </div>
     );

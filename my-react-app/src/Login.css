@@ -106,6 +106,19 @@
   gap: 10px;
 }
 
+.login-register {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 255, 102, 0.2);
+}
+
+.login-register .registro-usuario {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .btn-link {
   border-radius: 12px;
   border: 1px solid #3a3a3a;

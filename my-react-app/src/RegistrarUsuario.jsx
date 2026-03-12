@@ -3,7 +3,7 @@ import api from './Services/Api'
 import "./RegistrarUsuario.css";
 
 
-function RegistrarUsuario({usuarioEditado, limpiarSeleccion, onActualizacionExitosa}) {
+function RegistrarUsuario({usuarioEditado, limpiarSeleccion, onActualizacionExitosa, onCancel, ocultarTitulo = false}) {
   const[username, setUsername] = useState('');
   const[email, setEmail] = useState('');
   const[password, setPassword] = useState('');
@@ -51,7 +51,7 @@ function RegistrarUsuario({usuarioEditado, limpiarSeleccion, onActualizacionExit
 
   return (
     <div className="registro-usuario">
-      <h3 className="registro-usuario__titulo">Registrar Usuario</h3>
+      {!ocultarTitulo && <h3 className="registro-usuario__titulo">Registrar Usuario</h3>}
       <form onSubmit={handleSubmit} className="registro-usuario__form">
         {/* <label>Id</label>
         <input type="number" name="Id" /> */}
@@ -68,6 +68,7 @@ function RegistrarUsuario({usuarioEditado, limpiarSeleccion, onActualizacionExit
             onClick={() => {
               resetForm();
               if (limpiarSeleccion) limpiarSeleccion();
+              if (onCancel) onCancel();
             }}
           >
             Cancelar

@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import api from './Services/Api';
 import RegistrarProductos from './RegistrarProductos';
 
-function Productos() {
+function Productos({ isLoggedIn }) {
     const [productos, setProductos] = useState([]);
     const [cargando, setCargando] = useState(true);
     const [productoSeleccionado, setProductoSeleccionado] = useState(null);
@@ -29,10 +29,12 @@ function Productos() {
 
     return (
         <div className="productos">
-            <RegistrarProductos
-                productoEditado={productoSeleccionado}
-                limpiarSeleccion={() => setProductoSeleccionado(null)}
-                onActualizacionExitosa={obtenerProductos} />
+            {isLoggedIn && (
+                <RegistrarProductos
+                    productoEditado={productoSeleccionado}
+                    limpiarSeleccion={() => setProductoSeleccionado(null)}
+                    onActualizacionExitosa={obtenerProductos} />
+            )}
             <h2>Catálogo de Productos</h2>
             {productos.map((producto) => (
                 <div className="producto" key={producto.id}>
@@ -41,8 +43,12 @@ function Productos() {
                     <p>{producto.description ? producto.description : 'Sin descripción'}</p>
                     <p className="precio">${producto.price}</p>
                     <button>Añadir al carrito</button>
-                    <button className="eliminar">Eliminar</button>
-                    <button className="editar" onClick={()=>setProductoSeleccionado(producto)}>Editar</button>
+                    {isLoggedIn && (
+                        <>
+                            <button className="eliminar">Eliminar</button>
+                            <button className="editar" onClick={()=>setProductoSeleccionado(producto)}>Editar</button>
+                        </>
+                    )}
                 </div>
             ))}
         </div>
